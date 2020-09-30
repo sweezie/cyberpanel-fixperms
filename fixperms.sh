@@ -109,7 +109,7 @@ fixperms () {
     find "$HOMEDIR" -name '*.cgi' -o -name '*.pl' | xargs -r chmod $verbose 755
     #chown $verbose -R "$account":"$account" "$HOMEDIR"/public_html/*
     # Hidden files test support: https://serverfault.com/a/156481
-    chown $verbose -R "$account":"$account" "$HOMEDIR"/.[^.]*
+    chown $verbose -R "$account":"$account" "$HOMEDIR"
     find "$HOMEDIR"/* -name .htaccess -exec chown $verbose "$account"."$account" {} \;
 
     tput bold
