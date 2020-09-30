@@ -8,7 +8,6 @@
 # Set verbose to null
 verbose=""
 
-
 #Print the help text
 helptext () {
     tput bold
