@@ -103,22 +103,22 @@ fixperms () {
     echo "Fixing website files...."
     tput sgr0
     
-    #Fix individual files in public_html
-    find "$HOMEDIR"/public_html -type d -exec chmod $verbose 755 {} \;
-    find "$HOMEDIR"/public_html -type f | xargs -d$'\n' -r chmod $verbose 644
-    find "$HOMEDIR"/public_html -name '*.cgi' -o -name '*.pl' | xargs -r chmod $verbose 755
+    #Fix individual files
+    find "$HOMEDIR" -type d -exec chmod $verbose 755 {} \;
+    find "$HOMEDIR" -type f | xargs -d$'\n' -r chmod $verbose 644
+    find "$HOMEDIR" -name '*.cgi' -o -name '*.pl' | xargs -r chmod $verbose 755
     #chown $verbose -R "$account":"$account" "$HOMEDIR"/public_html/*
     # Hidden files test support: https://serverfault.com/a/156481
-    chown $verbose -R "$account":"$account" "$HOMEDIR"/public_html/.[^.]*
+    chown $verbose -R "$account":"$account" "$HOMEDIR"/.[^.]*
     find "$HOMEDIR"/* -name .htaccess -exec chown $verbose "$account"."$account" {} \;
 
     tput bold
     tput setaf 4
     echo "Fixing public_html...."
     tput sgr0
-    #Fix perms of public_html itself
-    chown $verbose "$account":"$account" "$HOMEDIR"/public_html
-    chmod $verbose 755 "$HOMEDIR"/public_html
+    #Fix perms
+    chown $verbose "$account":"$account" "$HOMEDIR"
+    chmod $verbose 755 "$HOMEDIR"
 
     tput bold
     tput setaf 4
@@ -131,12 +131,12 @@ fixperms () {
 
     
 
-    #Fix subdomains that lie outside of public_html
+    #Fix subdomains that lie outside of 
     #tput setaf 3
     #tput bold
     #echo "------------------------"
     #tput setaf 4
-    #echo "Fixing any domains with a document root outside of public_html...."
+    #echo "Fixing any domains with a document root outside
     #for SUBDOMAIN in $(grep -i documentroot /var/cpanel/userdata/$account/* | grep -v '.cache\|_SSL' | awk '{print $2}' | grep -v public_html)
     #do
       #tput bold
