@@ -60,19 +60,19 @@ fi
 
 
 # fix mailperms
-fixmailperms () {
-    tput bold
-    tput setaf 4
-    echo "Fixing mailperms...."
-    tput sgr0
-    #Fix perms of /home/vmail
-    chown -R vmail:vmail /home/vmail
-    chmod 755 /home/vmail
-    find /home/vmail -type d -exec chmod 0755 {} \;
-    find /home/vmail -type f -exec chmod 0640 {} \;
-    echo "Finished fixing mailperms...."
+# fixmailperms () {
+#     tput bold
+#     tput setaf 4
+#     echo "Fixing mailperms...."
+#     tput sgr0
+#     #Fix perms of /home/vmail
+#     chown -R vmail:vmail /home/vmail
+#     chmod 755 /home/vmail
+#     find /home/vmail -type d -exec chmod 0755 {} \;
+#     find /home/vmail -type f -exec chmod 0640 {} \;
+#     echo "Finished fixing ...."
 
-}
+# }
 
 # Main workhorse, fix perms per account passed to it
 fixperms () {
@@ -178,7 +178,7 @@ if [[ $OS = 'CentOS Linux' ]] ; then
     do
   fixperms "$user"
     done
-   fixmailperms
+#    fixmailperms
 fi
 
 if [[ $OS = 'Ubuntu' ]] ; then
@@ -186,7 +186,7 @@ if [[ $OS = 'Ubuntu' ]] ; then
     do
   fixperms "$user"
     done
-  fixmailperms
+#   fixmailperms
 fi
 
 }
