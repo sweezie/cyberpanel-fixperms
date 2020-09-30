@@ -19,7 +19,7 @@ Note: This is intended for **non-DSO** servers (Meaning, it will run just fine f
 To get the `fixperms` script, simply wget the file from Gitlab and make sure it's executable:
 
 ```bash
-wget https://gitlab.com/cyberpaneltoolsnscripts/cyberpanel-fixperms/raw/master/fixperms.sh
+wget https://raw.githubusercontent.com/sweezie/cyberpanel-fixperms/master/fixperms.sh
 chmod +x fixperms.sh
 ```
 
