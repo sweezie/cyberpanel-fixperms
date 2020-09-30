@@ -1,6 +1,13 @@
 # Cyberpanel-fixperms
 A script to fix permissions and ownership, on files and directories, for Cyberpanel accounts.
 
+This script is modified from https://github.com/whattheserver/cyberpanel-fixperms 
+
+THIS SCRIPT WILL BASICALLY CHOWN THE WHOLE DOMAIN FOLDER INSTEAD OF PUBLIC_HTML OR SUB DIRECTORIES. 
+
+If you have messed with cyberpanel migration, you'll know why you need this script. 
+
+
 ## More Info
 Ever needed just to quickly 'fix' the permissions or ownership for your files in a regular Cyberpanel account? This is the script for you. There is a staggering number of people using Cyberpanel out there, and this script will help every Cyberpanel user quickly recover from self-made permission mistakes or allow you to be lazy when setting permissions when uploading new scripts (ex: Wordpress).
 
